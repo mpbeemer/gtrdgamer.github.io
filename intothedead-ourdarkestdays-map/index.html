@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -49,7 +50,50 @@
       .p3::before {
         content: "●●● ";
       }
-    </style>
+
+      .threat0::after {
+        content: " ○○○○○○○○○○";
+      }
+
+      .threat1::after {
+        content: " ●○○○○○○○○○";
+      }
+
+      .threat2::after {
+        content: " ●●○○○○○○○○";
+      }
+
+      .threat3::after {
+        content: " ●●●○○○○○○○";
+      }
+
+      .threat4::after {
+        content: " ●●●●○○○○○○";
+      }
+
+      .threat5::after {
+        content: " ●●●●●○○○○○";
+      }
+
+      .threat6::after {
+        content: " ●●●●●●○○○○";
+      }
+
+      .threat7::after {
+        content: " ●●●●●●●○○○";
+      }
+
+      .threat8::after {
+        content: " ●●●●●●●●○○";
+      }
+
+      .threat9::after {
+        content: " ●●●●●●●●●○";
+      }
+
+      .threat10::after {
+        content: " ●●●●●●●●●●";
+      }    </style>
   </head>
   <body>
     <div id="map"></div>
@@ -60,197 +104,248 @@
         y: 2555,
         name: "9th Precinct Station",
         description: "Once a symbol of law and order, now just another hazardous ruin.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		survivor: "Kurt",
+		needs: "2 lockpicks",
+		nightmare_room: true,
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5425,
         y: 1922,
         name: "15 Independence Blvd",
         description: "This family home was once full of life. But now sits abandoned.",
-        threat: 0.3,
+        threat: 3,
         base: 1,
         weapons: 1,
         medical: 1,
         food: 3,
-        new_location: true
+        new_location: true,
+		new_locations_discoverable: "22 Springwood Drive",
+		clues: "Airlift",
+		needs: "1 lockpick",
+		survivor: "Michelle"
       }, {
         x: 5508,
         y: 1992,
         name: "22 Springwood Drive",
         description: "This small home stands empty, a silent testiment to sudden departure.",
-        threat: 0.2,
+        threat: 2,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		shelter: "(unchecked)",
+		needs: "1 lockpick",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5150,
         y: 2057,
         name: "38 Irving Drive",
         description: "The best house on the worst street.",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
+        threat: 1,
+        base: 1,
+        weapons: 1,
         medical: 0,
-        food: 0,
-        new_location: true
+        food: 1,
+        new_location: true,
+		new_locations_discoverable: "Old Ballard, Texway Gas Hart St, Value Records",
+		needs: "1 lockpick"
       }, {
         x: 5338,
         y: 2057,
         name: "319 Schrader St",
         description: "Its windows are boarded up and the lawn is patchy and turning brown.",
-        threat: 0.0,
-        base: 0,
+        threat: 1,
+        base: 1,
         weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        medical: 1,
+        food: 3,
+        new_location: true,
+		shelter: "2 beds",
+		new_locations_discoverable: "(no new locations)"
       }, {
         x: 4935,
         y: 2575,
         name: "Ashby Hoarder's House",
         description: "There's a building hidden somewhere beneath the junk.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		shelter: "(unchecked)",
+		needs: "1 lockpick"
       }, {
         x: 5235,
         y: 1700,
         name: "Auntie Mae's Truck Stop Diner",
         description: "Mae's boisterous personality made her place a favorite stop for truckers.",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        threat: 3,
+        base: 2,
+        weapons: 1,
+        medical: 1,
+        food: 3,
+        new_location: true,
+		shelter: "2 beds, garden",
+		new_locations_discoverable: "Container Yard #3"
       }, {
         x: 4910,
         y: 2310,
         name: "Best Electronics",
         description: "Filled with boxy televisions and overpriced stereo sets.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		shelter: "2 beds",
+		new_locations_discoverable: "Jay's Motel, The Hitchpost, Wash and Dry Laundromat",
+		survivor: "2 hostiles"
       }, {
         x: 5440,
         y: 2620,
         name: "Bloomingburg Books",
         description: "Generations of readers have found treasures in this historic bookstore.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		survivor: "Eve (Network contact)"
+      }, {
+        x: 4596,
+        y: 2530,
+        name: "Bottle Hill Ruin",
+        description: "Abandoned, the site was rumored to have housed a torture chamber.",
+        threat: 3,
+        base: 2,
+        weapons: 1,
+        medical: 1,
+        food: 3,
+        new_location: true,
+		new_locations_discoverable: "(unchecked)",
+		nightmare_room: true
       }, {
         x: 5523,
         y: 2480,
         name: "Briarwood Motel",
         description: "The neglect started long before the outbreak.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		survivor: "Hudson",
+		needs: "1 lockpick"
       }, {
         x: 5111,
         y: 1690,
         name: "Container Yard #3",
         description: "Affordable long-term storage solutions.",
-        threat: 0.0,
-        base: 0,
+        threat: 3,
+        base: 2,
         weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        medical: 1,
+        food: 1,
+        new_location: true,
+		new_locations_discoverable: "Victory Meat Processing, Walton City Water Treatment",
+		needs: "Bolt cutters",
+		escape_plan_item: "Aviation fuel"
       }, {
         x: 5016,
         y: 1785,
         name: "Fire Station No.8",
         description: "The station motto is 'Heroes in flames.'",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        threat: 3,
+        base: 2,
+        weapons: 2,
+        medical: 2,
+        food: 3,
+        new_location: true,
+		needs: "1 lockpick, Bolt cutters",
+		survivor: "Frank"
       }, {
         x: 5466,
         y: 2052,
         name: "Fire Station No.13",
         description: "The station motto is 'Defying fire's desire.'",
-        threat: 0.4,
+        threat: 4,
         base: 2,
-        weapons: 3,
-        medical: 1,
-        food: 2,
-        new_location: true
+        weapons: 1,
+        medical: 2,
+        food: 1,
+        new_location: true,
+		needs: "1 lockpick",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5398,
         y: 2750,
         name: "Fitzgerald House",
         description: "The pride of Walton's most beloved architect is now just another empty house.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		shelter: "(unchecked)"
       }, {
         x: 5210,
         y: 2422,
         name: "Galaxy Zone Arcade",
         description: "A sign reads: 'Overthrow alien invaders, one quarter at a time.'",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		needs: "1 lockpick",
+		shelter: "(unchecked)"
       }, {
         x: 5173,
         y: 2274,
         name: "Griffith & Sons Hardware",
         description: "This hardware store was a staple of the community for over sixty years.",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
+        threat: 2,
+        base: 2,
+        weapons: 1,
+        medical: 1,
         food: 0,
-        new_location: true
+        new_location: true,
+		needs: "1 lockpick",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5370,
         y: 1770,
         name: "Hackett Construction Inc.",
         description: "Leading innovation in construction.",
-        threat: 0.0,
-        base: 0,
+        threat: 3,
+        base: 2,
         weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        medical: 1,
+        food: 1,
+        new_location: true,
+		new_locations_discoverable: "Auntie Mae's Truck Stop Diner"
       }, {
         x: 4916,
         y: 1895,
         name: "Hardwick's Trailer",
         description: "A lone trailer sits in a dry, dusty plot.",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
+        threat: 1,
+        base: 1,
+        weapons: 1,
+        medical: 1,
         food: 0,
         new_location: true
       }, {
@@ -258,298 +353,364 @@
         y: 2013,
         name: "Harshaw Presbyterian",
         description: "Once a small, community-minded church with a dedicated local congregation.",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        threat: 1,
+        base: 2,
+        weapons: 1,
+        medical: 1,
+        food: 2,
+        new_location: true,
+		new_locations_discoverable: "Wash and Dry Laundromat",
+		needs: "1 lockpick",
+		survivor: "Rahul"
       }, {
         x: 4985,
         y: 2214,
         name: "Jay's Motel",
         description: "Only exhausted travelers would consider a stay in this shabby motel.",
-        threat: 0.0,
-        base: 0,
+        threat: 2,
+        base: 2,
         weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        medical: 2,
+        food: 1,
+        new_location: true,
+		new_locations_discoverable: "Value Records"
       }, {
         x: 4753,
         y: 2582,
         name: "Jensen Elementary  School",
         description: "Class textbooks and papers lie scattered across the halls.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		survivor: "Isabelle",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5212,
         y: 2558,
         name: "Kinski Foundation Gallery",
         description: "Walton's art scene used to call this the 'Cultural heart of Texas.'",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		shelter: "(unchecked)",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5575,
         y: 2135,
         name: "Lester Barr Automotive",
         description: "Something for everybody.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		survivor: "Lester",
+		needs: "1 lockpick",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5621,
         y: 2300,
         name: "Mercer High School",
         description: "A secondary school building featuring a large gymnasium and football field.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		needs: "Bolt cutters",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5578,
         y: 2799,
         name: "Millwood Manor",
         description: "The Buckner family mansion looms high above its now broken gates.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		survivor: "Cooper",
+		needs: "1 lockpick, Bolt cutters/firearm"
       }, {
         x: 5223,
         y: 2784,
         name: "Mitchum Powell Plaza",
         description: "This skyscraper was once a bustling hub of business activity.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		needs: "5 lockpicks, Bolt cutters"
       }, {
         x: 5055,
         y: 1929,
         name: "Old Ballard",
         description: "One of the few remaining artifacts of Harshaw's more prosperous past.",
-        threat: 0.0,
-        base: 0,
+        threat: 2,
+        base: 2,
         weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        medical: 2,
+        food: 3,
+        new_location: true,
+		new_locations_discoverable: "Harshaw Presbyterian",
+		clues: "The Network (2x), Hardwick's Trailer",
+		needs: "1 lockpick"
       }, {
         x: 5508,
         y: 2753,
         name: "Pioneer Motor Company",
         description: "Drive your dream and indulge in luxury.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		needs: "1 lockpick",
+		survivor: "1 hostile"
       }, {
         x: 5705,
         y: 2164,
         name: "Pogo's Greenhaven",
         description: "Serving up sandwiches and sliders to the local community.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		new_locations_discoverable: "(unchecked)",
+		clues: "Network Hideout access"
       }, {
         x: 4985,
         y: 2702,
         name: "Pogo's on 9th",
         description: "'Damn good burgers'",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		survivor: "Miguel",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5338,
         y: 2328,
         name: "Red Mile Gas Station",
         description: "Features rows of pumps and a run-down convenience store.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		survivor: "Barb",
+		needs: "1 lockpick",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5294,
         y: 2630,
         name: "RM&K Communications",
         description: "A plaque reads: 'Reede, McNeill and Kilroy.'",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		needs: "4 lockpicks",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 4813,
         y: 2762,
         name: "St Bernadette Hospital",
         description: "Your wellbeing is our mission.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		needs: "1 lockpick",
+		escape_plan_item: "Helicopter"
       }, {
         x: 5489,
         y: 2550,
         name: "Styx Arcade",
         description: "Spend an afternoon with the latest and greatest games.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		survivor: "Robbie",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5490,
         y: 2275,
         name: "Texas Sport Supply",
         description: "One of the last locally owned and operated sporting stores in Walton.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		shelter: "(unchecked)",
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5631,
         y: 2388,
         name: "Texway Gas Green St",
         description: "Fueling America's future since 1910!.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		new_locations_discoverable: "(unchecked)"
       }, {
         x: 5234,
         y: 1906,
         name: "Texway Gas Hart St",
         description: "A sign above the forecourt reads: 'Fill 'er up, roll on out.'",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        threat: 1,
+        base: 2,
+        weapons: 1,
+        medical: 1,
+        food: 2,
+        new_location: true,
+		new_locations_discoverable: "Fire Station No.8, Hackett Construction Inc.",
+		shelter: "1 bed, garden",
+		survivor: "Joe",
+		clues: "The Network"
       }, {
         x: 4987,
         y: 2314,
         name: "The Hitchpost",
         description: "Come for the drinks, stay for the music.",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
+        threat: 3,
+        base: 2,
+        weapons: 3,
+        medical: 2,
+        food: 2,
+        new_location: true,
+		needs: "2 lockpicks, Bolt cutters",
+		new_locations_discoverable: "(unchecked)"
+      }, {
+        x: 4688,
+        y: 2636,
+        name: "Thirty Ought Six Bar",
+        description: "The perfect shot of relaxation.",
+        threat: 2,
+        base: 2,
+        weapons: 1,
         medical: 0,
-        food: 0,
-        new_location: true
+        food: 1,
+        new_location: true,
+		shelter: "1 bed, distillery",
+		new_locations_discoverable: "St Bernadette Hospital"
       }, {
         x: 5398,
         y: 2127,
         name: "US Route 93",
         description: "Providing connectivity across the city, and beyond.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		needs: "Bolt cutters"
       }, {
         x: 5185,
         y: 2190,
         name: "Value Records",
         description: "Features a wide range of low-cost vinyl and band posters.",
-        threat: 0.0,
-        base: 0,
+        threat: 1,
+        base: 1,
         weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        medical: 1,
+        food: 3,
+        new_location: true,
+		new_locations_discoverable: "Griffith & Sons Hardware, Jay's Motel",
+		shelter: "1 bed" 
       }, {
         x: 4980,
         y: 1656,
         name: "Victory Meat Processing",
         description: "The unholy, pungent stench was present before the outbreak.",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        threat: 3,
+        base: 2,
+        weapons: 1,
+        medical: 1,
+        food: 3,
+        new_location: true,
+		nightmare_room: true
       }, {
         x: 5455,
         y: 2399,
         name: "Vivaldi's",
         description: "A cozy Italian-American restaurant, known for its ziti dishes.",
-        threat: 0.0,
+        threat: 0,
         base: 0,
         weapons: 0,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		needs: "1 lockpick"
       }, {
         x: 5122,
         y: 1597,
         name: "Walton City Water Treatment",
         description: "'There's nothing more refreshing than Walton City water.'",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
-        food: 0,
+        threat: 4,
+        base: 1,
+        weapons: 1,
+        medical: 1,
+        food: 1,
         new_location: true
       }, {
         x: 5294,
         y: 2188,
         name: "Walton Taxi Depot",
         description: "A large facility where taxis are maintained between shifts.",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
-        food: 0,
-        new_location: true
+        threat: 3,
+        base: 2,
+        weapons: 1,
+        medical: 1,
+        food: 2,
+        new_location: true,
+		new_locations_discoverable: "(unchecked)",
+		survivor: "Aubrey",
+		needs: "1 lockpick"
       }, {
         x: 4886,
         y: 2130,
         name: "Wash and Dry Laundromat",
         description: "Bring a book and sit back at your local self-service.",
-        threat: 0.0,
-        base: 0,
-        weapons: 0,
+        threat: 0,
+        base: 2,
+        weapons: 2,
         medical: 0,
         food: 0,
-        new_location: true
+        new_location: true,
+		new_locations_discoverable: "Harshaw Presbyterian",
+		survivor: "1 hostile"
       }];
     </script>
     <script>
@@ -586,21 +747,72 @@
         }
       }
       locations.forEach(loc => {
-        const popupContent = `
+        let prefix = `
       
 				<div class="popup">
 					<h1>${loc.name}</h1>
 					<p>${loc.description}</p>
+					<p class="threat${loc.threat}">Threat:</p>
 					<i class="p${loc.base}">Base Resources</i>
 					<i class="p${loc.weapons}">Weapons</i>
 					<i class="p${loc.medical}">Medical</i>
 					<i class="p${loc.food}">Food</i>
+		`;
+		let middle = ``;
+		if (loc.new_locations_discoverable) {
+			if (middle) {
+				middle += `<br/>`;
+			}
+			middle += `<b>New Locations Discoverable:</b> ${loc.new_locations_discoverable}`;
+		}
+		if (loc.needs) {
+			if (middle) {
+				middle += `<br/>`;
+			}
+			middle += `<b>Needs:</b> ${loc.needs}`;
+		}
+		if (loc.clues) {
+			if (middle) {
+				middle += `<br/>`;
+			}
+			middle += `<b>Clues:</b> ${loc.clues}`;
+		}
+		if (loc.survivor) {
+			if (middle) {
+				middle += `<br/>`;
+			}
+			middle += `<b>Survivor:</b> ${loc.survivor}`;
+		}
+		if (loc.shelter) {
+			if (middle) {
+				middle += `<br/>`;
+			}
+			middle += `<b>Shelter:</b> ${loc.shelter}`;
+		}
+		if (loc.nightmare_room) {
+			if (middle) {
+				middle += `<br/>`;
+			}
+			middle += `<b>Nightmare room</b>`;
+		}
+		if (loc.escape_plan_item) {
+			if (middle) {
+				middle += `<br/>`;
+			}
+			middle += `<b>Escape Plan item:</b> ${loc.escape_plan_item}`;
+		}
+		if (middle) {
+			middle = `<br/>` + middle;
+		}
+        let suffix = `
 				</div>
-    `;
-        L.marker([loc.y, loc.x]).addTo(map).bindPopup(popupContent);
-      });
-
-      function onMapClick(e) {
+		`;
+        const popupContent = prefix + middle + suffix;
+	
+	    L.marker([loc.y, loc.x]).addTo(map).bindPopup(popupContent);
+      });    
+    
+	function onMapClick(e) {
         console.info("You clicked the map at " + e.latlng);
       }
       map.on('click', onMapClick);
