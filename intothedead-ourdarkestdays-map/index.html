@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
       #map {
         width: 100%;
@@ -96,7 +97,6 @@
   </head>
   <body>
     <div id="map"></div>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
       const locations = [{
         x: 5065,
@@ -109,7 +109,7 @@
         medical: 0,
         food: 0,
         new_location: true,
-		survivor: "Kurt",
+		survivor: "Kirk",
 		needs: "2 lockpicks",
 		nightmare_room: true,
 		new_locations_discoverable: "(unchecked)"
@@ -139,7 +139,7 @@
         medical: 0,
         food: 0,
         new_location: true,
-		shelter: "(unchecked)",
+		shelter: "1 bed",
 		needs: "1 lockpick",
 		new_locations_discoverable: "(unchecked)"
       }, {
@@ -179,7 +179,8 @@
         medical: 0,
         food: 0,
         new_location: true,
-		shelter: "(unchecked)",
+		shelter: "2 beds, water collector",
+		water_collector: true,
 		needs: "1 lockpick"
       }, {
         x: 5235,
@@ -193,6 +194,7 @@
         food: 3,
         new_location: true,
 		shelter: "2 beds, garden",
+		garden: true,
 		new_locations_discoverable: "Container Yard #3"
       }, {
         x: 4910,
@@ -207,7 +209,7 @@
         new_location: true,
 		shelter: "2 beds",
 		new_locations_discoverable: "Jay's Motel, The Hitchpost, Wash and Dry Laundromat",
-		survivor: "2 hostiles"
+		other_people: "2 hostiles"
       }, {
         x: 5440,
         y: 2620,
@@ -219,7 +221,7 @@
         medical: 0,
         food: 0,
         new_location: true,
-		survivor: "Eve (Network contact)"
+		other_people: "Eve (Network contact)"
       }, {
         x: 4596,
         y: 2530,
@@ -272,6 +274,7 @@
         food: 3,
         new_location: true,
 		needs: "1 lockpick, Bolt cutters",
+		new_locations_discoverable: "Victory Meat, Container Yard #3",
 		survivor: "Frank"
       }, {
         x: 5466,
@@ -279,13 +282,13 @@
         name: "Fire Station No.13",
         description: "The station motto is 'Defying fire's desire.'",
         threat: 4,
-        base: 2,
-        weapons: 1,
+        base: 3,
+        weapons: 2,
         medical: 2,
-        food: 1,
+        food: 2,
         new_location: true,
 		needs: "1 lockpick",
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Lester Barr Automotive"
       }, {
         x: 5398,
         y: 2750,
@@ -297,7 +300,9 @@
         medical: 0,
         food: 0,
         new_location: true,
-		shelter: "(unchecked)"
+		shelter: "1 bed, garden, water collector",
+		water_collector: true,
+		garden: true
       }, {
         x: 5210,
         y: 2422,
@@ -310,7 +315,8 @@
         food: 0,
         new_location: true,
 		needs: "1 lockpick",
-		shelter: "(unchecked)"
+		shelter: "1 bed, water collector",
+		water_collector: true
       }, {
         x: 5173,
         y: 2274,
@@ -323,17 +329,17 @@
         food: 0,
         new_location: true,
 		needs: "1 lockpick",
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Red Mile Gas Station"
       }, {
         x: 5370,
         y: 1770,
         name: "Hackett Construction Inc.",
         description: "Leading innovation in construction.",
         threat: 3,
-        base: 2,
-        weapons: 0,
+        base: 1,
+        weapons: 1,
         medical: 1,
-        food: 1,
+        food: 0,
         new_location: true,
 		new_locations_discoverable: "Auntie Mae's Truck Stop Diner"
       }, {
@@ -384,8 +390,8 @@
         medical: 0,
         food: 0,
         new_location: true,
-		survivor: "Isabelle",
-		new_locations_discoverable: "(unchecked)"
+		survivor: "Isabel",
+		new_locations_discoverable: "Thirty Ought Six Bar, Bottle Hill Ruin"
       }, {
         x: 5212,
         y: 2558,
@@ -397,8 +403,8 @@
         medical: 0,
         food: 0,
         new_location: true,
-		shelter: "(unchecked)",
-		new_locations_discoverable: "(unchecked)"
+		shelter: "2 beds, distillery",
+		new_locations_discoverable: "RM&K Communications, Pogo's on 9th"
       }, {
         x: 5575,
         y: 2135,
@@ -412,7 +418,7 @@
         new_location: true,
 		survivor: "Lester",
 		needs: "1 lockpick",
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Texas Sport Supply, Pogo's Greenhaven"
       }, {
         x: 5621,
         y: 2300,
@@ -425,7 +431,7 @@
         food: 0,
         new_location: true,
 		needs: "Bolt cutters",
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Texway Gas Green St"
       }, {
         x: 5578,
         y: 2799,
@@ -450,7 +456,7 @@
         medical: 0,
         food: 0,
         new_location: true,
-		needs: "5 lockpicks, Bolt cutters"
+		needs: "7 lockpicks, Bolt cutters"
       }, {
         x: 5055,
         y: 1929,
@@ -459,7 +465,7 @@
         threat: 2,
         base: 2,
         weapons: 0,
-        medical: 2,
+        medical: 3,
         food: 3,
         new_location: true,
 		new_locations_discoverable: "Harshaw Presbyterian",
@@ -477,7 +483,7 @@
         food: 0,
         new_location: true,
 		needs: "1 lockpick",
-		survivor: "1 hostile"
+		other_people: "1 hostile"
       }, {
         x: 5705,
         y: 2164,
@@ -503,7 +509,7 @@
         food: 0,
         new_location: true,
 		survivor: "Miguel",
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Ashby Hoarder's House, St Bernadette Hospital"
       }, {
         x: 5338,
         y: 2328,
@@ -517,7 +523,7 @@
         new_location: true,
 		survivor: "Barb",
 		needs: "1 lockpick",
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Vivaldi's, Texas Sport Supply, Galaxy Zone Arcade"
       }, {
         x: 5294,
         y: 2630,
@@ -530,7 +536,7 @@
         food: 0,
         new_location: true,
 		needs: "4 lockpicks",
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Mitchum Powell Plaza, Fitzgerald House"
       }, {
         x: 4813,
         y: 2762,
@@ -556,7 +562,7 @@
         food: 0,
         new_location: true,
 		survivor: "Robbie",
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Pioneer Motor Company"
       }, {
         x: 5490,
         y: 2275,
@@ -568,20 +574,22 @@
         medical: 0,
         food: 0,
         new_location: true,
-		shelter: "(unchecked)",
-		new_locations_discoverable: "(unchecked)"
+		shelter: "2 beds, garden, water collector",
+		water_collector: true,
+		garden: true,
+		new_locations_discoverable: "Red Mile Gas Station, Mercer High School"
       }, {
         x: 5631,
         y: 2388,
         name: "Texway Gas Green St",
         description: "Fueling America's future since 1910!.",
         threat: 0,
-        base: 0,
-        weapons: 0,
-        medical: 0,
-        food: 0,
+        base: 2,
+        weapons: 1,
+        medical: 1,
+        food: 2,
         new_location: true,
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Briarwood Motel"
       }, {
         x: 5234,
         y: 1906,
@@ -590,11 +598,12 @@
         threat: 1,
         base: 2,
         weapons: 1,
-        medical: 1,
+        medical: 0,
         food: 2,
         new_location: true,
 		new_locations_discoverable: "Fire Station No.8, Hackett Construction Inc.",
 		shelter: "1 bed, garden",
+		garden: true,
 		survivor: "Joe",
 		clues: "The Network"
       }, {
@@ -609,7 +618,7 @@
         food: 2,
         new_location: true,
 		needs: "2 lockpicks, Bolt cutters",
-		new_locations_discoverable: "(unchecked)"
+		new_locations_discoverable: "Best Electronics"
       }, {
         x: 4688,
         y: 2636,
@@ -644,7 +653,7 @@
         base: 1,
         weapons: 0,
         medical: 1,
-        food: 3,
+        food: 2,
         new_location: true,
 		new_locations_discoverable: "Griffith & Sons Hardware, Jay's Motel",
 		shelter: "1 bed" 
@@ -694,7 +703,7 @@
         medical: 1,
         food: 2,
         new_location: true,
-		new_locations_discoverable: "(unchecked)",
+		new_locations_discoverable: "Texas Sport Supply",
 		survivor: "Aubrey",
 		needs: "1 lockpick"
       }, {
@@ -709,7 +718,7 @@
         food: 0,
         new_location: true,
 		new_locations_discoverable: "Harshaw Presbyterian",
-		survivor: "1 hostile"
+		other_people: "1 hostile"
       }];
     </script>
     <script>
@@ -745,6 +754,10 @@
           }).addTo(map);
         }
       }
+	  var popup = L.popup()
+		.setLatLng([1800, 4000])
+		.setContent("White circle: Water collector<br>Brown circle: garden<br>Blue circle: Survivor<br>Yellow circle: Vantage point<br>Green circle: Shelter")
+		.openOn(map);
       locations.forEach(loc => {
         let prefix = `
       
@@ -800,6 +813,12 @@
 			}
 			middle += `<b>Escape Plan item:</b> ${loc.escape_plan_item}`;
 		}
+		if (loc.other_people) {
+			if (middle) {
+				middle += `<br/>`;
+			}
+			middle += `<b>Other people:</b> ${loc.other_people}`;
+		}
 		if (middle) {
 			middle = `<br/>` + middle;
 		}
@@ -809,8 +828,49 @@
         const popupContent = prefix + middle + suffix;
 	
 	    L.marker([loc.y, loc.x]).addTo(map).bindPopup(popupContent);
-      });    
-    
+		if (loc.water_collector) {
+			var circle = L.circle([loc.y, loc.x], {
+				color: 'white',
+				fillColor: 'white',
+				fillOpacity: 0.5,
+				radius: 55
+			}).addTo(map);
+		}
+		if (loc.garden) {
+			var circle = L.circle([loc.y, loc.x], {
+				color: 'brown',
+				fillColor: 'brown',
+				fillOpacity: 0.5,
+				radius: 45
+			}).addTo(map);
+		}
+		if (loc.survivor) {
+			var circle = L.circle([loc.y, loc.x], {
+				color: 'blue',
+				fillColor: 'blue',
+				fillOpacity: 0.5,
+				radius: 35
+			}).addTo(map);
+		}
+		if (loc.new_locations_discoverable) {
+			var circle = L.circle([loc.y, loc.x], {
+				color: 'orange',
+				fillColor: 'orange',
+				fillOpacity: 0.5,
+				radius: 25
+			}).addTo(map);
+		}
+		if (loc.shelter) {
+			var circle = L.circle([loc.y, loc.x], {
+				color: 'green',
+				fillColor: 'green',
+				fillOpacity: 0.5,
+				radius: 15
+			}).addTo(map);
+		}
+
+      });
+		
 	function onMapClick(e) {
         console.info("You clicked the map at " + e.latlng);
       }
