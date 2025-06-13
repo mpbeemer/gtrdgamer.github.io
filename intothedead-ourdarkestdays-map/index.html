@@ -140,7 +140,7 @@
             weapons: 1,
             medical: 1,
             food: 3,
-            new_locations_discoverable: "22 Springwood Drive, Texway Gas Hart St",
+            new_locations_discoverable: "22 Springwood Drive, 319 Schrader St, Texway Gas Hart St",
             clues: "Airlift",
             needs: "1 lockpick",
             survivor: "Michelle"
@@ -156,7 +156,7 @@
             food: 0,
             shelter: "1 bed",
             needs: "1 lockpick",
-            new_locations_discoverable: "unchecked"
+            new_locations_discoverable: "Fire Station No.13, Walton Taxi Depot"
         }, {
             x: 5150,
             y: 2057,
@@ -208,7 +208,7 @@
             food: 3,
             shelter: "2 beds, garden",
             garden: true,
-            new_locations_discoverable: "Container Yard #3"
+            new_locations_discoverable: "Container Yard #3, Hackett Construction Inc."
         }, {
             x: 4910,
             y: 2310,
@@ -284,6 +284,7 @@
             new_locations_discoverable: "unchecked"
         }, {
             x: 5016,
+			
             y: 1785,
             name: "Fire Station No.8",
             description: "The station motto is 'Heroes in flames.'",
@@ -293,7 +294,7 @@
             medical: 2,
             food: 3,
             needs: "1 lockpick, Bolt cutters",
-            new_locations_discoverable: "Victory Meat Processing, Container Yard #3",
+            new_locations_discoverable: "Container Yard #3, Old Ballard, Victory Meat Processing",
             survivor: "Frank"
         }, {
             x: 5466,
@@ -610,7 +611,7 @@
             weapons: 1,
             medical: 0,
             food: 2,
-            new_locations_discoverable: "Fire Station No.8, Hackett Construction Inc.",
+            new_locations_discoverable: "15 Independence Blvd, 38 Irving Drive, Fire Station No.8, Hackett Construction Inc.",
             shelter: "1 bed, garden",
             garden: true,
             survivor: "Joe",
@@ -754,17 +755,7 @@
             [0, 0],
             [mapHeight, mapWidth]
         ];
-		
-		var myIcon = L.icon({
-			iconUrl: 'images/MapPin2.png',
-			iconSize: [32, 40],
-			iconAnchor: [15, 30],
-			popupAnchor: [1, -28],
-			//shadowUrl: 'my-icon-shadow.png',
-			//shadowSize: [68, 95],
-			//shadowAnchor: [22, 94]
-		});
-		
+
         const map = L.map('map', {
             crs: L.CRS.Simple,
             minZoom: -2,
@@ -856,66 +847,188 @@
 				</div>
 		`;
             const popupContent = prefix + middle + suffix;
+			
+			const markerIcon = L.Icon.extend({
+				options: {
+					shadowUrl: 'images/marker-shadow.png',
+					iconSize:     [25, 41],
+					shadowSize:   [41, 41],
+					iconAnchor:   [12, 37],
+					shadowAnchor: [12, 37],
+					popupAnchor:  [0, -36]
+				}
+			});
 
-            var this_marker = L.marker([loc.y, loc.x]).bindPopup(popupContent).addTo(all_locations);
+            var this_marker = L.marker([loc.y, loc.x]).bindPopup(popupContent)
+			this_marker.addTo(all_locations);
+			
+			var icon00000 = new markerIcon({iconUrl: 'images/00000.png'})
+			var icon00001 = new markerIcon({iconUrl: 'images/00001.png'})
+			var icon00010 = new markerIcon({iconUrl: 'images/00010.png'})
+			var icon00011 = new markerIcon({iconUrl: 'images/00011.png'})
+			var icon00100 = new markerIcon({iconUrl: 'images/00100.png'})
+			var icon00101 = new markerIcon({iconUrl: 'images/00101.png'})
+			var icon00110 = new markerIcon({iconUrl: 'images/00110.png'})
+			var icon00111 = new markerIcon({iconUrl: 'images/00111.png'})
+			var icon01000 = new markerIcon({iconUrl: 'images/01000.png'})
+			var icon01001 = new markerIcon({iconUrl: 'images/01001.png'})
+			var icon01010 = new markerIcon({iconUrl: 'images/01010.png'})
+			var icon01011 = new markerIcon({iconUrl: 'images/01011.png'})
+			var icon01100 = new markerIcon({iconUrl: 'images/01100.png'})
+			var icon01101 = new markerIcon({iconUrl: 'images/01101.png'})
+			var icon01110 = new markerIcon({iconUrl: 'images/01110.png'})
+			var icon01111 = new markerIcon({iconUrl: 'images/01111.png'})
+			var icon10000 = new markerIcon({iconUrl: 'images/10000.png'})
+			var icon10001 = new markerIcon({iconUrl: 'images/10001.png'})
+			var icon10010 = new markerIcon({iconUrl: 'images/10010.png'})
+			var icon10011 = new markerIcon({iconUrl: 'images/10011.png'})
+			var icon10100 = new markerIcon({iconUrl: 'images/10100.png'})
+			var icon10101 = new markerIcon({iconUrl: 'images/10101.png'})
+			var icon10110 = new markerIcon({iconUrl: 'images/10110.png'})
+			var icon10111 = new markerIcon({iconUrl: 'images/10111.png'})
+			var icon11000 = new markerIcon({iconUrl: 'images/11000.png'})
+			var icon11001 = new markerIcon({iconUrl: 'images/11001.png'})
+			var icon11010 = new markerIcon({iconUrl: 'images/11010.png'})
+			var icon11011 = new markerIcon({iconUrl: 'images/11011.png'})
+			var icon11100 = new markerIcon({iconUrl: 'images/11100.png'})
+			var icon11101 = new markerIcon({iconUrl: 'images/11101.png'})
+			var icon11110 = new markerIcon({iconUrl: 'images/11110.png'})
+			var icon11111 = new markerIcon({iconUrl: 'images/11111.png'})
 
+			var iconIndex = 0;
+			
             if (loc.water_collector) {
-                var circle = L.circle([loc.y, loc.x], {
-                    color: 'white',
-                    fillColor: 'white',
-                    fillOpacity: 0.5,
-                    radius: 55
-                }).addTo(map);
-                L.marker([loc.y, loc.x]).bindPopup(popupContent).addTo(collectors);
-
-            }
-            if (loc.garden) {
-                var circle = L.circle([loc.y, loc.x], {
-                    color: 'brown',
-                    fillColor: 'brown',
-                    fillOpacity: 0.5,
-                    radius: 45
-                }).addTo(map);
-                L.marker([loc.y, loc.x]).bindPopup(popupContent).addTo(gardens);
-            }
-            if (loc.survivor) {
-                var circle = L.circle([loc.y, loc.x], {
-                    color: 'blue',
-                    fillColor: 'blue',
-                    fillOpacity: 0.5,
-                    radius: 35
-                }).addTo(map);
-                L.marker([loc.y, loc.x]).bindPopup(popupContent).addTo(survivors);
+				iconIndex = iconIndex + 10000;
+				this_marker.addTo(collectors);
             }
             if (loc.new_locations_discoverable) {
-                var circle = L.circle([loc.y, loc.x], {
-                    color: 'orange',
-                    fillColor: 'orange',
-                    fillOpacity: 0.5,
-                    radius: 25
-                }).addTo(map);
-                L.marker([loc.y, loc.x]).bindPopup(popupContent).addTo(vantages);
+				iconIndex = iconIndex + 1000;
+				this_marker.addTo(vantages);
             }
             if (loc.shelter) {
-                var circle = L.circle([loc.y, loc.x], {
-                    color: 'green',
-                    fillColor: 'green',
-                    fillOpacity: 0.5,
-                    radius: 15
-                }).addTo(map);
-                L.marker([loc.y, loc.x]).bindPopup(popupContent).addTo(shelters);
+				iconIndex = iconIndex + 100;
+				this_marker.addTo(shelters);
             }
-
+            if (loc.survivor) {
+				iconIndex = iconIndex + 10;
+				this_marker.addTo(survivors);
+            }
+            if (loc.garden) {
+				iconIndex = iconIndex + 1;
+				this_marker.addTo(gardens);
+            }
+			var iconName = 'icon' + iconIndex;
+			
+			switch (iconIndex) {
+				case 0:
+					this_marker.setIcon(icon00000);
+					break;
+				case 1:
+					this_marker.setIcon(icon00001);
+					break;
+				case 10:
+					this_marker.setIcon(icon00010);
+					break;
+				case 11:
+					this_marker.setIcon(icon00011);
+					break;
+				case 100:
+					this_marker.setIcon(icon00100);
+					break;
+				case 101:
+					this_marker.setIcon(icon00101);
+					break;
+				case 110:
+					this_marker.setIcon(icon00110);
+					break;
+				case 111:
+					this_marker.setIcon(icon00111);
+					break;
+				case 1000:
+					this_marker.setIcon(icon01000);
+					break;
+				case 1001:
+					this_marker.setIcon(icon01001);
+					break;
+				case 1010:
+					this_marker.setIcon(icon01010);
+					break;
+				case 1011:
+					this_marker.setIcon(icon01011);
+					break;
+				case 1100:
+					this_marker.setIcon(icon01100);
+					break;
+				case 1101:
+					this_marker.setIcon(icon01101);
+					break;
+				case 1110:
+					this_marker.setIcon(icon01110);
+					break;
+				case 1111:
+					this_marker.setIcon(icon01111);
+					break;
+				case 10000:
+					this_marker.setIcon(icon10000);
+					break;
+				case 10001:
+					this_marker.setIcon(icon10001);
+					break;
+				case 10010:
+					this_marker.setIcon(icon10010);
+					break;
+				case 10011:
+					this_marker.setIcon(icon10011);
+					break;
+				case 10100:
+					this_marker.setIcon(icon10100);
+					break;
+				case 10101:
+					this_marker.setIcon(icon10101);
+					break;
+				case 10110:
+					this_marker.setIcon(icon10110);
+					break;
+				case 10111:
+					this_marker.setIcon(icon10111);
+					break;
+				case 11000:
+					this_marker.setIcon(icon11000);
+					break;
+				case 11001:
+					this_marker.setIcon(icon11001);
+					break;
+				case 11010:
+					this_marker.setIcon(icon11010);
+					break;
+				case 11011:
+					this_marker.setIcon(icon11011);
+					break;
+				case 11100:
+					this_marker.setIcon(icon11100);
+					break;
+				case 11101:
+					this_marker.setIcon(icon11101);
+					break;
+				case 11110:
+					this_marker.setIcon(icon11110);
+					break;
+				case 11111:
+					this_marker.setIcon(icon11111);
+					break;
+				default:
+					this_marker.setIcon(icon00000);
+			}
         });
 
         const layerControl = L.control.layers(null, null).addTo(map);
 
         layerControl.addBaseLayer(all_locations, 'All');
-        layerControl.addBaseLayer(shelters, 'Shelters');
-        layerControl.addBaseLayer(vantages, 'New locations discoverable');
-        layerControl.addBaseLayer(survivors, 'Survivors');
-        layerControl.addBaseLayer(gardens, 'Gardens');
-        layerControl.addBaseLayer(collectors, 'Water Collectors');
+        layerControl.addBaseLayer(shelters, 'Shelters (blue)');
+        layerControl.addBaseLayer(vantages, 'New locations discoverable (orange)');
+        layerControl.addBaseLayer(survivors, 'Survivors (purple)');
+        layerControl.addBaseLayer(gardens, 'Gardens (green)');
+        layerControl.addBaseLayer(collectors, 'Water Collectors (white)');
     </script>
 </body>
 
