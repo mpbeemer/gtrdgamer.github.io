@@ -744,6 +744,8 @@
         const survivors = L.layerGroup();
         const gardens = L.layerGroup();
         const collectors = L.layerGroup();
+		const location_names = L.layerGroup();
+		const location_needs = L.layerGroup();
 
         const tileWidth = 1024;
         const tileHeight = 1024;
@@ -755,6 +757,24 @@
             [0, 0],
             [mapHeight, mapWidth]
         ];
+		
+		const markerIcon = L.Icon.extend({
+			options: {
+				shadowUrl: 'images/marker-shadow.png',
+				iconSize:     [25, 41],
+				shadowSize:   [41, 41],
+				iconAnchor:   [12, 37],
+				shadowAnchor: [12, 37],
+				popupAnchor:  [0, -36]
+			}
+		});
+
+		const labelIcon = L.icon({
+			iconUrl: 'images/emptyIcon.png',
+			iconSize: [25, 41],
+			iconAnchor: [41, 41],
+			popupAnchor: [0, -36],
+		});
 
         const map = L.map('map', {
             crs: L.CRS.Simple,
@@ -779,6 +799,34 @@
                 }).addTo(map);
             }
         }
+		
+		var popupContent = "";
+		var this_marker = "";
+		var this_label = "";
+		var iconIndex = 0;
+		var tooltip = "";
+
+		const icon00000 = new markerIcon({iconUrl: 'images/00000.png'})
+		const icon00010 = new markerIcon({iconUrl: 'images/00010.png'})
+		const icon00100 = new markerIcon({iconUrl: 'images/00100.png'})
+		const icon00101 = new markerIcon({iconUrl: 'images/00101.png'})
+		const icon00110 = new markerIcon({iconUrl: 'images/00110.png'})
+		const icon00111 = new markerIcon({iconUrl: 'images/00111.png'})
+		const icon01000 = new markerIcon({iconUrl: 'images/01000.png'})
+		const icon01010 = new markerIcon({iconUrl: 'images/01010.png'})
+		const icon01100 = new markerIcon({iconUrl: 'images/01100.png'})
+		const icon01101 = new markerIcon({iconUrl: 'images/01101.png'})
+		const icon01110 = new markerIcon({iconUrl: 'images/01110.png'})
+		const icon01111 = new markerIcon({iconUrl: 'images/01111.png'})
+		const icon10100 = new markerIcon({iconUrl: 'images/10100.png'})
+		const icon10101 = new markerIcon({iconUrl: 'images/10101.png'})
+		const icon10110 = new markerIcon({iconUrl: 'images/10110.png'})
+		const icon10111 = new markerIcon({iconUrl: 'images/10111.png'})
+		const icon11100 = new markerIcon({iconUrl: 'images/11100.png'})
+		const icon11101 = new markerIcon({iconUrl: 'images/11101.png'})
+		const icon11110 = new markerIcon({iconUrl: 'images/11110.png'})
+		const icon11111 = new markerIcon({iconUrl: 'images/11111.png'})
+
         locations.forEach(loc => {
             let prefix = `
       
@@ -846,56 +894,17 @@
             let suffix = `
 				</div>
 		`;
-            const popupContent = prefix + middle + suffix;
-			
-			const markerIcon = L.Icon.extend({
-				options: {
-					shadowUrl: 'images/marker-shadow.png',
-					iconSize:     [25, 41],
-					shadowSize:   [41, 41],
-					iconAnchor:   [12, 37],
-					shadowAnchor: [12, 37],
-					popupAnchor:  [0, -36]
-				}
-			});
-
-            var this_marker = L.marker([loc.y, loc.x]).bindPopup(popupContent)
+            popupContent = prefix + middle + suffix;
+            this_marker = L.marker([loc.y, loc.x], {icon: labelIcon}).bindPopup(popupContent);
 			this_marker.addTo(all_locations);
 			
-			var icon00000 = new markerIcon({iconUrl: 'images/00000.png'})
-			var icon00001 = new markerIcon({iconUrl: 'images/00001.png'})
-			var icon00010 = new markerIcon({iconUrl: 'images/00010.png'})
-			var icon00011 = new markerIcon({iconUrl: 'images/00011.png'})
-			var icon00100 = new markerIcon({iconUrl: 'images/00100.png'})
-			var icon00101 = new markerIcon({iconUrl: 'images/00101.png'})
-			var icon00110 = new markerIcon({iconUrl: 'images/00110.png'})
-			var icon00111 = new markerIcon({iconUrl: 'images/00111.png'})
-			var icon01000 = new markerIcon({iconUrl: 'images/01000.png'})
-			var icon01001 = new markerIcon({iconUrl: 'images/01001.png'})
-			var icon01010 = new markerIcon({iconUrl: 'images/01010.png'})
-			var icon01011 = new markerIcon({iconUrl: 'images/01011.png'})
-			var icon01100 = new markerIcon({iconUrl: 'images/01100.png'})
-			var icon01101 = new markerIcon({iconUrl: 'images/01101.png'})
-			var icon01110 = new markerIcon({iconUrl: 'images/01110.png'})
-			var icon01111 = new markerIcon({iconUrl: 'images/01111.png'})
-			var icon10000 = new markerIcon({iconUrl: 'images/10000.png'})
-			var icon10001 = new markerIcon({iconUrl: 'images/10001.png'})
-			var icon10010 = new markerIcon({iconUrl: 'images/10010.png'})
-			var icon10011 = new markerIcon({iconUrl: 'images/10011.png'})
-			var icon10100 = new markerIcon({iconUrl: 'images/10100.png'})
-			var icon10101 = new markerIcon({iconUrl: 'images/10101.png'})
-			var icon10110 = new markerIcon({iconUrl: 'images/10110.png'})
-			var icon10111 = new markerIcon({iconUrl: 'images/10111.png'})
-			var icon11000 = new markerIcon({iconUrl: 'images/11000.png'})
-			var icon11001 = new markerIcon({iconUrl: 'images/11001.png'})
-			var icon11010 = new markerIcon({iconUrl: 'images/11010.png'})
-			var icon11011 = new markerIcon({iconUrl: 'images/11011.png'})
-			var icon11100 = new markerIcon({iconUrl: 'images/11100.png'})
-			var icon11101 = new markerIcon({iconUrl: 'images/11101.png'})
-			var icon11110 = new markerIcon({iconUrl: 'images/11110.png'})
-			var icon11111 = new markerIcon({iconUrl: 'images/11111.png'})
-
-			var iconIndex = 0;
+			tooltip = L.tooltip([loc.y+17, loc.x+5], {content: loc.name}).addTo(location_names);
+			
+			if (loc.needs) {
+				tooltip = L.tooltip([loc.y, loc.x+5], {content: loc.needs}).addTo(location_needs);
+			}
+			
+			iconIndex = 0;
 			
             if (loc.water_collector) {
 				iconIndex = iconIndex + 10000;
@@ -923,14 +932,8 @@
 				case 0:
 					this_marker.setIcon(icon00000);
 					break;
-				case 1:
-					this_marker.setIcon(icon00001);
-					break;
 				case 10:
 					this_marker.setIcon(icon00010);
-					break;
-				case 11:
-					this_marker.setIcon(icon00011);
 					break;
 				case 100:
 					this_marker.setIcon(icon00100);
@@ -947,14 +950,8 @@
 				case 1000:
 					this_marker.setIcon(icon01000);
 					break;
-				case 1001:
-					this_marker.setIcon(icon01001);
-					break;
 				case 1010:
 					this_marker.setIcon(icon01010);
-					break;
-				case 1011:
-					this_marker.setIcon(icon01011);
 					break;
 				case 1100:
 					this_marker.setIcon(icon01100);
@@ -968,18 +965,6 @@
 				case 1111:
 					this_marker.setIcon(icon01111);
 					break;
-				case 10000:
-					this_marker.setIcon(icon10000);
-					break;
-				case 10001:
-					this_marker.setIcon(icon10001);
-					break;
-				case 10010:
-					this_marker.setIcon(icon10010);
-					break;
-				case 10011:
-					this_marker.setIcon(icon10011);
-					break;
 				case 10100:
 					this_marker.setIcon(icon10100);
 					break;
@@ -991,18 +976,6 @@
 					break;
 				case 10111:
 					this_marker.setIcon(icon10111);
-					break;
-				case 11000:
-					this_marker.setIcon(icon11000);
-					break;
-				case 11001:
-					this_marker.setIcon(icon11001);
-					break;
-				case 11010:
-					this_marker.setIcon(icon11010);
-					break;
-				case 11011:
-					this_marker.setIcon(icon11011);
 					break;
 				case 11100:
 					this_marker.setIcon(icon11100);
@@ -1029,6 +1002,8 @@
         layerControl.addBaseLayer(survivors, 'Survivors (purple)');
         layerControl.addBaseLayer(gardens, 'Gardens (green)');
         layerControl.addBaseLayer(collectors, 'Water Collectors (white)');
+	layerControl.addOverlay(location_names, 'Location names');
+	layerControl.addOverlay(location_needs, 'Scavenging tools needed');
     </script>
 </body>
 
